@@ -1,6 +1,6 @@
 require('dotenv').config();
 const fs = require('fs');
-const { WebhookClient } = require('discord.js');
+const { WebhookClient, EmbedBuilder } = require('discord.js');
 
 async function startlog(){
   const webhookClient = new WebhookClient({ url: process.env.webhook });
@@ -55,12 +55,11 @@ async function errorlog(error) {
   }
 }
 
-async function randomlog(cron) {
+async function randomlog(hour, minute) {
   const webhookClient = new WebhookClient({ url: process.env.webhook });
-  let time = cron.slice(0, 2);
   try {
     webhookClient.send({
-      content: `🕔 | 5시가 되어 급식 전송 시간을 다시 설정합니다. <@!890187595517157377>\n⏰ 급식 전송 스케줄 설정됨: 오후 9시 ${time.replace(" ", "")}분`,
+      content: `🕔 | 5시가 되어 급식 전송 시간을 다시 설정합니다. <@!890187595517157377>\n⏰ 급식 전송 스케줄 설정됨: 오후 ${hour}시 ${minute}분`,
       username: "동신과고 급식 시간로그"
     });
     console.log("성공적으로 로그를 보냈습니다.");
