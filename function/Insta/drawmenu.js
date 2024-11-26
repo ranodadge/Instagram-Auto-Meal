@@ -57,7 +57,7 @@ async function drawTextOnImage(time, today) {
         ctx.fillText(`${text2}`, 520, menuline + index * 400);
     
         ctx.font = '40px "AggroBold"';
-        ctx.fillText(`칼로리: ${meal.CAL_INFO}`, 550, 1010 + index * 1010);
+        ctx.fillText(`칼로리: ${meal.CAL_INFO}`, 530, 1010 + index * 1010);
     
         let when;
         if (time === 1) when = "오늘의 조식 목록";
