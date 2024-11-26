@@ -5,6 +5,7 @@ const { login } = require('./login');
 const { drawmenu } = require('./drawmenu');
 const { datetoday } = require('./date');
 const { successlog, errorlog } = require('./webhook');
+const { setFlag } = require('./flagcheck');
 
 async function publish(choice){
     try{
@@ -23,20 +24,19 @@ async function publish(choice){
         }
 
         await instagram.publish.album({
-            items: [
-              { width: 1080, height: 1080, file: imageBuffer1 },
-              { width: 1080, height: 1080, file: imageBuffer2 },
-              { width: 1080, height: 1080, file: imageBuffer3 },
-            ],
-            caption: `${datetoday(
-              today
-            )} 급식입니다.  \n\n #DDSHS #학생회주도 #급식 #조식 #중식 #석식`,
+            items: item,
+            caption: `${datetoday(today)} 급식입니다.  \n\n #DDSHS #학생회주도 #급식 #조식 #중식 #석식`,
         });
 
         console.log("게시물이 성공적으로 올라갔습니다.");
         successlog(buffer);
+        setFlag();
     } catch(e){
         console.error("에러 발생", e);
         errorlog(e);
     }
+}
+
+module.exports = {
+    publish
 }

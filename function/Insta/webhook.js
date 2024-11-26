@@ -55,8 +55,23 @@ async function errorlog(error) {
   }
 }
 
+async function randomlog(cron) {
+  const webhookClient = new WebhookClient({ url: process.env.webhook });
+  let time = cron.slice(0, 2);
+  try {
+    webhookClient.send({
+      content: `🕔 | 5시가 되어 급식 전송 시간을 다시 설정합니다. <@!890187595517157377>\n⏰ 급식 전송 스케줄 설정됨: 오후 9시 ${time.replace(" ", "")}분`,
+      username: "동신과고 급식 시간로그"
+    });
+    console.log("성공적으로 로그를 보냈습니다.");
+  } catch (error) {
+    console.error("웹훅 전송 중 오류 발생" + error);
+  }
+}
+
 module.exports = {
   startlog,
   successlog,
-  errorlog
+  errorlog,
+  randomlog
 }
