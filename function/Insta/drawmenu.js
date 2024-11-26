@@ -1,8 +1,6 @@
 const { createCanvas, loadImage, registerFont } = require("canvas");
 const fs = require('fs');
-const path = require('path');
 const file = ['json/morning.json', 'json/launch.json', 'json/dinner.json'];
-const plain = ['photo/plain/menu1.jpg', 'photo/plain/menu2.jpg', 'photo/plain/menu3.jpg'];
 const { datetoday } = require('./date');
 const { getMeal } = require('./loadmenu')
 
