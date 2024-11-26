@@ -21,7 +21,6 @@
     "instagram-private-api": "^1.46.1",
     "node-cron": "^3.0.3",
     "path": "^0.12.7",
-    "puppeteer": "^23.9.0",
-    "self-rpc-builder": "^0.0.3"
+    "puppeteer": "^23.9.0"
   }
 }
