@@ -13,7 +13,6 @@ async function drawmenu(choice){
     for(let time = 1; time < 4; time++){
         await drawTextOnImage(time, today);
     }
-    
 }
 
 async function drawTextOnImage(time, today) {
