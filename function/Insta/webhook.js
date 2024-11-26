@@ -22,14 +22,14 @@ async function startlog(){
 }
 
 
-async function successlog(buffer1, buffer2, buffer3) {
+async function successlog(buffer) {
   const webhookClient = new WebhookClient({ url: process.env.webhook });
 
   try {
     webhookClient.send({
       content: "🏫 | 성공적으로 게시물을 올렸습니다. <@!890187595517157377>",
       username: "동신과고 급식 전송로그",
-      files: [buffer1, buffer2, buffer3],
+      files: buffer,
     });
     console.log("성공적으로 로그를 보냈습니다.");
   } catch (error) {
