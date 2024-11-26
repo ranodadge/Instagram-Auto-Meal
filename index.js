@@ -13,8 +13,7 @@ function scheduleRandomJob() {
     }
 
     const minute = Math.floor(Math.random() * 60);
-    const hour = Math.floor(Math.random() * 1);
-    hour+=20;
+    const hour = Math.floor(Math.random() * 1) + 20;
     const cronExpression = `${minute} ${hour} * * 0-4`;
 
     cronJob = cron.schedule(cronExpression, () => {
