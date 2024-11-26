@@ -3,4 +3,4 @@ const { drawmenu } = require('./function/Insta/writemenu');
 
 //getMeal(0);
 
-drawmenu(3);
+drawmenu(0);
