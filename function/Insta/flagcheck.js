@@ -1,8 +1,9 @@
 const fs = require('fs');
 const FLAG_FILE = 'json/FLAG.json';
 
-function setFlag() {
+function setFlag(i) {
     const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() - i);
     const flag = {
         year: currentDate.getFullYear(),
         month: currentDate.getMonth(),

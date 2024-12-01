@@ -1,3 +1,6 @@
 .env
 node_modules/
 package-lock.json
+photo/menu/mealImage1.jpg
+photo/menu/mealImage2.jpg
+photo/menu/mealImage3.jpg

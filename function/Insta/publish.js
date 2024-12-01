@@ -30,7 +30,7 @@ async function publish(choice){
 
         console.log("게시물이 성공적으로 올라갔습니다.");
         successlog(buffer);
-        setFlag();
+        setFlag(choice - 1);
     } catch(e){
         console.error("에러 발생", e);
         errorlog(e);
