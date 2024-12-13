@@ -11,7 +11,7 @@ async function Eventload(client) {
             } else {
                 client.on(event.name, (...args) => event.execute(...args, client))
             }
-            console.log(`\x1b[32m[HANDLER] \x1b[33m[Events] \x1b[36m${event.name}\x1b[37m has been loaded.\x1b[0m`)
+            console.log(`\x1b[32m[HANDLER] \x1b[33m[Events] \x1b[36m${file}\x1b[37m has been loaded.\x1b[0m`)
         }
     }
 }
