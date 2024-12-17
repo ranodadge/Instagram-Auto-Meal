@@ -1,5 +1,4 @@
 const { Client, Events, ActivityType } = require('discord.js');
-const { startlog } = require('../../function/Insta/webhook');
 
 module.exports = {
     name: Events.ClientReady,

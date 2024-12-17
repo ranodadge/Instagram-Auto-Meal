@@ -9,17 +9,12 @@ const fs = require('fs')
 
 async function SlashCommandload(client) {
     const commands = [];
-
-    const commandsFolders = "./slashcommands";
-    const commandsFolder = fs.readdirSync(commandsFolders)
-    for(const folder of commandsFolder){
-        const commandsFiles = fs.readdirSync(`./slashcommands/${folder}`).filter(file => file.endsWith(".js"))
-        for (const file of commandsFiles) {
-            const command = require(`../slashcommands/${folder}/${file}`)
-            client.slashcommands.set(command.data.name, command)
-            commands.push(command.data.toJSON())
-            console.log(`\x1b[32m[HANDLER] \x1b[33m[SlashCommands] \x1b[36m${command.data.name}\x1b[37m has been loaded.\x1b[0m`)
-        }
+    const commandsFiles = fs.readdirSync(`./slashcommands`).filter(file => file.endsWith(".js"))
+    for (const file of commandsFiles) {
+        const command = require(`../slashcommands/${file}`)
+        client.slashcommands.set(command.data.name, command)
+        commands.push(command.data.toJSON())
+        console.log(`\x1b[32m[HANDLER] \x1b[33m[SlashCommands] \x1b[36m${command.data.name}\x1b[37m has been loaded.\x1b[0m`)
     }
         
 
